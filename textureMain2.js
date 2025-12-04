@@ -81,7 +81,7 @@ function setUpTextures(){
 
     const worldImage = new Image();
     worldImage.crossOrigin = 'anonymous'; // Critical fix for CORS
-    worldImage.src = './  1_earth_16k.jpg';
+    worldImage.src = './1_earth_16k.jpg';
     worldImage.onerror = () => console.error("Failed to load world texture:", worldImage.src);
     worldImage.onload = () => { 
         console.log("World texture loaded successfully");
