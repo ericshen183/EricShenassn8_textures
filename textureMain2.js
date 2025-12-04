@@ -98,7 +98,7 @@ function setUpTextures(){
     
     const img = new Image();
     img.crossOrigin = 'anonymous'; // Critical fix for CORS
-    img.src = './eyeball.jpeg';
+    img.src = './meteor.jpg';
     img.onerror = () => console.error("Failed to load meteor texture:", img.src);
     img.onload = () => { 
         console.log("Meteor texture loaded successfully");
