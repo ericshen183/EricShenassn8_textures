@@ -44,52 +44,6 @@
          mat4 rz = mat4 ( c.z,  s.z,  0.0,  0.0,
                          -s.z,  c.z,  0.0,  0.0,
                          0.0,  0.0,  1.0,  0.0,
-                         0.0,  <html>
-<head>
-    <title>CSCI-610: Assn 8 - Textures</title>
-    
-    <link rel="icon" href="data:,">
-    
-    <!-- vertex Shader -->
-    <script id="sphereMap-V"  type="x-shader/x-vertex">
-    #version 300 es
-    precision highp float;
-    // Vertex shader for phong illumination model
-    // Per vertex shading
-
-    // Vertex Attributes
-    in vec3 aVertexPosition; // in model coords
-    in vec2 aUV;    // u-v coordinates
-
-    // outputs
-    out vec2 theUV;  // pass uv's onto the fragment shader
-    
-    // for object rotation
-    uniform vec3 theta;
-      
-      
-    void main()
-    {
-        // Compute the sines and cosines of each rotation
-        // about each axis
-        vec3 angles = radians( theta );
-        vec3 c = cos( angles );
-        vec3 s = sin( angles );
-
-        // rotation matrices
-        mat4 rx = mat4 ( 1.0,  0.0,  0.0,  0.0,
-                         0.0,  c.x,  s.x,  0.0,
-                         0.0, -s.x,  c.x,  0.0,
-                         0.0,  0.0,  0.0,  1.0 );
-
-        mat4 ry = mat4 ( c.y,  0.0, -s.y,  0.0,
-                         0.0,  1.0,  0.0,  0.0,
-                         s.y,  0.0,  c.y,  0.0,
-                         0.0,  0.0,  0.0,  1.0 );
-
-         mat4 rz = mat4 ( c.z,  s.z,  0.0,  0.0,
-                         -s.z,  c.z,  0.0,  0.0,
-                         0.0,  0.0,  1.0,  0.0,
                          0.0,  0.0,  0.0,  1.0 );
                          
         // pass uvs to fragment shader
